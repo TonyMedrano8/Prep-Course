@@ -1,0 +1,140 @@
+
+    Explicaciones de conceptos de programación (Variables, strings, funciones,
+    valores buleanos):
+
+VARIABLES - Es un espacio en memoria que almacena un dato para luego poder ser
+utilizado, tienen un nombre por el cual se identifica y también un valor (éste
+valor, o dato, puede ser de varios "tipos" [numerico, un caracter, cadena de
+caracteres, un cadena de elementos, entre otros. Los cuales dentro de JS tienen
+sus nombres que los identifican]). Podemos compararlo a una caja, a la cual se
+le puede poner una etiqueta (un nombre) y se le puede agregar un contenido (un
+dato).
+
+    Ejemplo de cómo se declara una variable: var variable = 26; En donde var
+es una palabra reservada para indicar que a continuación se establecerá el
+nombre de la variable (también sirve para indicar unas cuantas cosas más pero
+por lo pronto entendamosla como algo que nos indica que la variable va a ser
+declarada). Despues tenemos el signo = que nos indica que se le asignará el
+siguiente valor que le suceda. En este caso el valor es el número 26. Y se
+finaliza la instrucción con un ; para indicar que ya se espera que se ejecute
+la función hasta este punto.
+
+STRINGS - Son un tipo de dato de las VARIABLES, especificamente es una cadena
+de caracteres. Es decir que son sucesivos caracteres alfanumericos y especiales
+(el alfabeto, números y signos especiales como: !, /, ·, etc...). Para
+ejemplificar podemos ver algo así en el código: "Hola mundo!" o 'Hello world'.
+En otras palabras todo texto entre comillas dobles o simples es un STRING.
+
+FUNCIONES - Las FUNCIONES son estructuras de código que nos permiten realizar
+una determinada operación y pueden ser llamadas más adelante en el código, esto
+nos permite ahorrar código y nos facilita la lectura del mismo. La sintaxis de
+las funciones es la siguiente:
+
+function saludar() {
+    console.log("Hola Mundo!");
+}
+
+    Para llamar a esta función basta con escribir saludar() en el código, de esta
+forma se ejecuta su función. 
+
+    Las funciones también pueden recibir algunos datos. A los datos que se le
+pasan a una función se les llama argumentos. Dentro de la misma función los
+argumentos funcionan como variables, las cuales reciben su valor al ser llamada
+la función a la cual pertenecen. A modo de ejemplo, y para aclarar esto,
+consideremos la siguiente función:
+
+function suma(num1, num2) {
+    return num1 + num2;
+}
+
+    En la función anterior, "suma()", se establecen las variables num1 y num2,
+estas son usadas como comodines para usar los datos que se le proporcionen al
+ser llamada la función. En este caso la función pide dos numeros para
+entregarte la suma de estos, para llamar esta función se le proporcionarían
+estos dos numeros dentro del parentesis separados por una coma. Imaginemos, por
+ejemplo que queremos proporcionarle los números 2 y 3, como argumentos. Para
+esto usariamos la siguiente sintaxis dentro del código: 
+
+suma(2, 3);
+
+    Habrás notado que en la función suma hay una palabra antes de realizar la
+propia suma (2 + 3), la palabra reservada "return" para indicar qué es lo que
+la función retornará. Las funciones ademas de realizar algunas tareas también
+retornan un valor al ser ejecutadas, este valor que retornan puede ser
+establecido dentro de la función con la palabra clave "retorn".
+
+IF - If es una estructura de código que nos permite alterar el flujo de un
+programa. Es decir que nos permite, dependiendo de una condición, ejecutarlo o
+no. Para ilustrarlo de una mejor manera, con código, imaginemonos que queremos imprimir un
+mensaje en la consola pero sólo si la variable edad es mayor que 17:
+
+if(edad > 18){
+    console.log("Hola adulto!");
+}
+
+    Revisemos la sintaxis parte por parte. Primero encontramos la palabra
+reservada "if" que nos indica que el siguiente bloque de código es una
+estructura IF. Después encontramos unos parentesis que es donde podremos
+declarar la condicionante que nos dirá si el bloque de codigo que está entre {}
+se ejecutará o no. Dentro de las llaves se escribirá todo el codigo que
+deseemos ejecutar.
+
+    Habrás notado que se utiliza el simbolo de mayor que, " > ", para
+"preguntar" si la variable edad es mayor que 18. Al "pregunrar" se generan dos
+posibles respuestas: sí o no, verdadero o falso. A lo que se le conoce como
+VALORES BOOLEANOS.
+
+    En caso de que no se cumpla la condicionante no se ejecutará el codigo del
+IF pero... ¿Y si queremos que se ejecute un código en caso de que no se cumpla
+la condicionante? Entonces emplearemos otras estructuras de código que son:
+ELSE y ELSE IF. Veamos su sintaxis:
+
+if(edad > 18){
+    console.log("Hola adulto!");
+}else if(edad > 12){
+    console.log("Hola adolescente!");
+}else{
+    console.log("Hola niño!");
+}
+
+    Como podrás notar en el ejemplo anterior, la estructura ELSEIF sirve para
+proporcionar una segunda opción en caso de que la primera condicionante (la del
+if) no se cumpla. ELSE sirve, más bien para indicar que se ejecute un código se
+ejecute si no se cumple con la condición o condiciones. 
+
+    Cabe mensionar que se pueden anidar (es decir, se puede meter un if dentro
+de un if, dentro de un if, dentro de un if... etc.) tanto como se necesite.
+También se puede declarar la estructura IF sin ELSEIF, sólo con el ELSE. Como
+por ejemplo:
+
+if(edad > 18){
+    console.log("Eres adulto");
+}else{
+    console.log("No eres adulto");
+}
+
+VALORES BOOLEANOS - Falso o verdad. Te permiten saber si algo se cumple, o es
+verdadero o no. Por ejemplo en las condicionantes de un IF podemos encontrar
+declaraciones como "1 > 2", lo cual es falso, o "3 < 6", lo cual es verdadero.
+
+    También estos valores pueden ser asignados a las variables, se les conoce como
+variables booleanas a las que almacenan dos posibles estados, o bien, verdad o
+falso. Las palabras reservadas para indicar si el estado de la variable para
+verdad y falso, son sus traducciones al inglés: true, false, respectivamente.
+
+    Para ilustrar mejor este concepto veamos algunos ejemplos en código:
+- Así se veria una variable declarada con el valor booleano falso y otra con el
+valor booleano verdadero:
+
+var estaVariableEsFalsa = false;
+var estaVariableEsVerdadera = true;
+
+- Así se vería una función que retornara verdadero si el argumento proporcionado,
+el cual sería un número, fuera mayor a 5, y falso en el caso contrario:
+
+function esMayorA5(num) {
+    if(num > 5){
+        return true;
+    }
+    return false;
+}

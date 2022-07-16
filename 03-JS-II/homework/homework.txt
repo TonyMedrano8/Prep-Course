@@ -1,0 +1,80 @@
+
+    Explicación de conseptos de programación (FOR, &&. ||, !)
+
+FOR - Es una estructura de código que nos permite repetir de forma controlada
+un bloque de código. Su sintaxis sería la siguiente:
+
+for(let i = 0; i < 10; i++){
+    console.log(i);
+}
+
+    Como podemos ver en el ejemplo de arriba está conformada por la palabra
+reservada for despues una serie de instrucciones entre parentesis y después un
+bloque de código que está delimitado por llaves {}.
+
+    Lo que se encuentra entre parentesis nos ayuda a controlar cuantas veces se
+estará repitiendo el bloque de código que se encuentra entre parentesis. Está
+estructurado en tres importantes secciones, separadas por punto y coma. La
+primera parte se ejecuta una unica vez al iniciar el bucle y nos permite crear
+una variable "contadora", que nos permitira establecer desde donde iniciará a
+contar (puede ser un numero positivo o negativo, incluso puede ser una variable
+ya existente). La segunda sección es donde colocaremos nuestro condicionante,
+si se cumple la sentencia entonces se ejecutará el código; en caso de que no se
+cumpla la sentencia, no se ejecutara más el bucle. La tercera y ultima sección
+se ejecuta justo después de finalizar cada ciclo de ejecución del bloque de
+codigo entre llaves, esto nos sirve para ir incrementando (o decrementando,
+dependiendo el caso) la variable contadora (queremos que cambie porque así
+podemos hacer que en el punto en que ya no se cumpla la condicionante se
+termine de forma controlada el bucle).
+
+    Los operadores logicos:
+
+&& - En JavaScript se utiliza esta sintaxis para declarar una conjunción. Es
+decir para operar valores booleanos y verificar que tanto como uno y otro valor
+comparado sean verdaderos.
+
+    Por ejemplo, podemos decir que una expresión es verdader si tenemos lo
+siguiente dentro del código: true && true. La expresión sería falsa si
+cualquiera de los elementos de esta comparación fuere false. A continuación
+veremos una tabla ilustrando esto:
+
+true && true // es true
+true && false // es false
+false && true // es false
+false && false // es false
+
+    A esta tabla que está arriba se le conoce como tabla de verdad en
+matemáticas booleanas, aunque claro con su nomenclatura propia. Conviene
+escribirlas de esta manera para que se paresca más al código.
+
+|| - En JavaScript se utiliza esta sintaxis para declarar una disyunción. Es
+decir para operar valores booleanos y verificar si al menos uno de los valores
+comparados en verdadero.
+
+    Por ejemplo, podemos decir que una expresión es falsa si tenemos lo
+siguiente dentro de un código: false || false. La expresión sería verdadera si
+cualqueira de los elementos de esta comparación fueran verdaderos. A
+continuación veremos su tabla de verdad:
+
+true || true // es true
+true || false // es true
+false || true // es true
+false || false // es false
+
+! - En JavaScript se utiliza esta sintaxis para las negaciones. Es decir que
+sirve para negar un valor booleano, en otras palabras lo invierte: si este es
+falso se convierte con este simbolo, en verdadero. En el código se vería algo
+así:
+
+!true // es false
+!false // es true
+
+*Esto es solo el principio fundamental de los operadores lógicos obviamente y
+hasta dónde el código que estes escribiendo te lo exija, esto se puede volver
+más complejo. Simplemente agrupando entre parentesis y comparando estas
+agrupaciones con operadores lógicos, se vuelve complejo:
+
+(true && (!(false && true) || !true)) || ((true || false) && (!false)) // true
+
+    Es complejo, pero sensillo entendiendo bien los fundamentos de estos
+operadores y como interpretarlos.
