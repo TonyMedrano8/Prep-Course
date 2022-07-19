@@ -1,0 +1,79 @@
+
+    Explicando conceptos de programación (Arrays)
+
+ARRAYS - O listas, nos permiten asignarle una lista de datos a una variable.
+Este tipo de variables se declaran igual que una variable normal con la palabra
+reservada var seguido de un nombre para identificarla, el cambio se encuentra
+en el valor que se le asigna a la variable ya que se le pasa una lista de datos
+entre corchetes. La sintaxis para declarar un array sería la siguiente:
+
+var arr = [23, "Hola mundo!", null, undefined, true, fucntion
+holi(){console.log("Holiwi")}, [1, 2, 3, 4], 'a'];
+
+//Como puedes ver los tipos de datos que soporta son practicamente todos los
+que JS ofrece.
+
+    Entendamos que cada elemento tiene un indice que lo identifica, es decir
+que a cada uno se le asigna automaticamente un indice númerico que comienza a
+contar desde el 0. Por ejemplo, a continuación mostraremos como están indexados
+los elementos de arr:
+
+  0     1           2       3           4   5   
+[23, "Hola mundo!", null, undefined, true, function
+
+                                   6         7
+holi(){console.log("Holiwi")}, [1, 2, 3, 4], 'a']
+
+    Como podemos observar en la parte de arriba, aunque el array tiene 8
+elementos su indice más grande es el numero 7, esto porque los indices
+comienzan a contar desde el 0 y no desde 1 como normalmente lo hacemos. Es muy
+importante que entiendas este principio ya que es uno de los errores más
+comunes al programar.
+
+    Para operar, entonces, sobre un elemento de un array de manera
+independiente se utiliza la siguiente sintaxis:
+
+arr[1] // devuelve "Hola mundo!"
+arr[0] // devuelve 23
+
+    Gracias a esta sintaxis podemos operar sobre cada uno de los elementos de
+un array útilizando un bucle for, de la siguiente manera:
+
+for(let i = 0; i < arr.length; i++){
+    console.log("El elemento con el indice " + i + " es " + arr[i]);
+}
+
+// Devuelve:
+//
+//El elemento con el indice 0 es 23
+//El elemento con el indice 1 es Hola mundo!
+//El elemento con el indice 2 es null
+//El elemento con el indice 3 es udefined
+//El elemento con el indice 4 es true
+//El elemento con el indice 5 es function holi(){console.log("Holiwi")}
+//El elemento con el indice 6 es [1, 2, 3, 4]
+//El elemento con el indice 7 es 'a'
+
+    Si observamos en la sección de la condicionante del bucle for, podremos
+observar la siguiente expresión i < arr.length lo que nos indica que el bucle
+se ejecutará mientras haya elementos en el array. Pero prestemos atención a
+arr.length, esta sintaxis nos permite acceder a lo que conocemos como propiedad
+de un objeto dentro de JS. No te preocupes si no lo entiendes bien por ahora
+sólo quedate con la idea de que esto nos permite saber cuantos elementos tiene
+un array y que así como esta propiedad hay, también, metodos que nos permiten
+llevar a cabo ciertas tareas sin escribir tanto código.
+
+    Por ejemplo a continuación te mostraré algunos metodos utiles al momento de
+trabajar con arrays:
+
+arr.push(x) - Nos permite agregar al final del array arr el elemento x.
+
+arr.pop() - Nos permite eliminar el último elemento del array arr y devuelve
+este mismo elemento.
+
+arr.shift() - Nos permite eliminar el primer elemeto del array arr.
+
+arr.unshift(x) - Nos permite agregar el elemento x al principio del array arr.
+
+arr.includes(x) - Nos permite verificar si el array arr contiene el elemento x,
+en caso de que lo contenga devuelve true y en el caso contrario devuelve false.

@@ -1,0 +1,110 @@
+
+    Explicación de conceptos de programación (Objetos, Propiedades, Métodos,
+    Bucle for...in, Notación de puntos vs notación de corchetes).
+
+OBJETOS - Los objetos son parecidos a los arrays, lo que los distingue es que,
+ademas de estar definidos por llaves y no corchetes, los indices no son
+númericos. Los objetos trabajan con llaves (keys) en lugar de indices númericos y a
+estos se les asigna un valor. La sintaxis en código para declarar un objeto es
+la siguiente:
+
+var objeto = {
+    nombre: "Puerta",
+    color: "Negra",
+    estado: "Cerrada",
+    candados: [1, 2, 3]
+}
+
+PROPIEDADES - Las propiedades son variables internas de los objetos. En el
+ejemplo anterior podemos observar que el objeto objeto tiene 4 propiedades, las
+cuales son: nombre, color y estado (todos estos strings) y la propiedad
+candados que es un array.
+
+MÉTODOS - Los metodos son parecidos a las propiedades, pero en lugar de
+contener un dato cualquiera sólo albergan funciones. A continuación se
+declarará al mismo objeto que en el ejemplo anterior pero con un metodo que sea
+cantar:
+
+var objeto = {
+    nombre: "Puerta",
+    color: "Negra",
+    estado: "Cerrada",
+    candados: [1, 2, 3],
+    cantar: function(){
+        console.log("Ya está " + this.estado + " con " +
+        this.candados[this.candados.length - 1] + " candados y remachada la " +
+        this.nombre + this.color + ".");
+    }
+}
+
+    Como puedes observar en este ejemplo se nos da el método cantar. El cual
+carga en la consola el string "Ya está Cerrada con 3 candados y remachada la
+Puerta Negra.". 
+
+NOTACIÓN DE PUNTO VS NOTACIÓN DE CORCHETES - Dicha notación hace referencia a
+como se accede desde afuera del objeto a una PROPIEDAD o a un MÉTODO. Se accede
+a estos para poder utilizar sus datos o bien para poder asignarle uno. En el
+siguiente ejemplo podremos apresiar como se utilizan las dos notaciones, para
+utilizar los datos que contienen y también para reasignar datos:
+
+    Esta sería para acceder al valor de la llave:
+
+objeto.nombre // devuelve Puerta
+objeto["estado"] // devuelve Cerrada
+
+    Esta sería para asignar un valor a la llave:
+
+objeto.nombre = "Portón"; // asigna el valor Portón a la llave nombre
+objeto["estado"] = "Cerrado" // asigna el valor Cerrado a la llave estado
+
+    Como puedes notar la notación de puntos es más sensillo que la notación de
+corchetes, aunque tiene una desventaja ante la notación con corchetes: La
+notación de corchetes soporta que se le pase una variable como argumento. Es
+decir que con la siguiente sintaxis le puedes agsignar una variable que haya
+sido declarado con anterioridad:
+
+// Normalmente lo haríamos:
+
+objeto.color = "Verde"; // Le asigna el valor verda a la llave color
+
+// Con la notación de corchetes se podría hacer lo mismo con la siguiente
+// expresión:
+
+var str = "color";
+objeto[str] = "Verde"; 
+
+    Con esta sintaxis podemos aprobechar esta ventaja para poder pasarle el
+nombre de una llave/key a travez de una variable. Esto, por ejemplo, nos
+serviría para crear una función que nos permitiera verificar una llave dentro
+de un objeto, tal que así:
+
+function verificarLlave(objeto, llave){
+    if(objeto[llave] === null || objeto[llave] === undefined){
+        return false;
+    }
+    return true;
+}
+
+FOR...IN - Es fácil iterar (repetir una acción varias veces) dentro de un array
+con la estructura for porque su sintaxis de declarar una variable contadora nos
+permite pasar por todos los indices de un arreglo. Pero... cómo iteramos dentro
+de un objeto objeto? Pues para estas ocaciónes tenemos las estructuras
+FOR...IN, que nos permite iterar dentro de un objeto pasando por todas sus
+llaves. Con la siguiente sintaxis podremos saber sus llaves y también cada uno
+de sus valores:
+
+for(var llave in objetos){
+    console.log("El valor de la llave " + llave + " es: " + objeto[llave])
+}
+
+// Devolvería en consola:
+// 
+// El valor de la llave nombre es: Portón
+// El valor de la llave color es: Verde
+// El valor de la llave estado es: cerrada
+// El valor de la llave candados es: [1, 2, 3]
+
+    Como podemos notar en el ejemplo anterior recorrimos el objeto sin
+necesidad de conocer el nombre de sus llaves, emplearemos la estructura
+FOR...IN para recorrer un objeto por cada uno de sus PROPIEDADES y MÉTODOS, sin
+conocerlos previamente.
