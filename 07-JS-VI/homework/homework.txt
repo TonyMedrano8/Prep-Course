@@ -1,0 +1,28 @@
+
+    Explicando conceptos de programación (funciones callback).
+
+FUNCIONES CALLBACK - Son, basicamente, funciones que nos permiter llamar a otra
+función. Esta función puede ser declarada al mismo tiempo que es llamada o bien
+puede ser una función que ya haya sido declarada.
+
+    La sintaxis de una función callback que devuelva el resultado de pasarle el
+mismo número que se le pasó a ella, a una función que le suma 5 a un número:
+
+finction sumarCinco(num){
+    return num + 5;
+}
+
+function llamarASumarCinco(num, cb){
+    return cb(num);
+}
+
+    Para poder pasarle la funcion sumarCinco a la función llamarASumarCinco
+para que le sume cinco al numero 2, lo haríamos de la siguiente manera:
+
+llamarASumarCinco(2, sumarCinco);
+
+    Si observas al momento de llamar a sumarCinco lo hacemos sólo y no con los
+parentesis como normalmente lo hacemos, esto porque queremos llamar a la
+estructura y no realizar la operación que realiza la función en si. Es decir
+que al declarar el nombre de la función (y no llamarla con los parentesis)
+accedemos a la estructura y no a la función en si.

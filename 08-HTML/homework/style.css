@@ -1,0 +1,54 @@
+body {
+  background-image: url("./img/tabasco.jpg");
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  color: red;
+  margin-top: 0;
+}
+
+li {
+  list-style-image: url("./img/olmeca.png");
+}
+
+img {
+  width: 400px;
+  height: 250px;
+}
+
+#thirdDiv {
+  height: 600px;
+  width: 500px;
+  background-color: pink;
+  padding: 50px;
+  border: 10px dotted red;
+  margin: 50px auto;
+}
+
+#spanId {
+  font-size: 18px;
+  margin: 50px;
+}
+
+.divClass {
+  margin: 0 auto;
+  padding: 50px;
+  background-color: rgba(0,0,0,.85);
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.column a {
+  text-decoration: none;
+  color: white;
+  Text-transform: uppercase;
+}
+
+.column a:hover {
+  color: red;
+}

@@ -1,0 +1,58 @@
+
+    Explicando conceptos de programación (prororype, construcors).
+
+PROTOTYPE - Es una palabra reservada en JavaScript que hace referencia al
+prototipo del objeto que se está llamando. Es decir sirve para hacer alución al
+prototipo de un objeto.
+
+    JS es un lenguaje prototipado, es decir que casi todos los datos y
+expresiones que se declaran en JS son objetos, los cuales están en relación con
+un prototipo de objeto del cual heredan siertas funciones.
+
+    Por poner un ejemplo, imaginemosnos que declaramos un array en código de la
+siguiente manera:
+
+var arr = [1, 2, 3, 4];
+
+    De este array podemos saber su propiedad length de la siguiente manera:
+arr.legnth. Si ponemos atención length es una PROPIEDAD de el "objeto" arr. ¿De
+dónde viene esa propiedad si nunca se declaró en el array? Bueno, es porque el
+objeto prototipo del cual hereda sus propiedades y métodos un array es el
+OBJETO PROTOTIPO Array, el cual cuenta con propiedades como length y metodos
+como push y pop.
+
+    Entendiendo esto entonces podemos acceder a estas propiedades y métodos con
+siguiente sintaxis:
+
+arr.prototype.legnth
+
+CONSTRUCTORS - Los constructores son funciones que nos permiten crear un objeto
+desde una clase.
+
+    Una clase es precisamente un prototipo creado para facilitar la creación de
+objetos con la misma estructura de propiedades y metodos (nos sirve para no
+repetir código). La sintaxis para crear una clase es la siguiente:
+
+class Fruta {
+    constuctor(nombre, color, tieneSemilla){
+        this.nombre = nombre;
+        this.color = color;
+        this.tieneSemilla = tieneSemilla;
+
+        pudrirse(){
+            this = null;
+        }
+    }
+}
+
+    Como puedes observar en la sintaxis para declarar una clase también se ve
+constructor, basicamente establece cuál será la estructura principal del
+objeto. Para poder crear a partir de esta clase ya declarada, un objeto,
+bastaría con escribir:
+
+var manzana = new Fruta("manzana", "verde", true); // creas una fruta/manzana
+
+manazana.pudrirse(); // esto haría que no existira el objeto manzana
+
+    A partir de la creación de un objeto, este pude ser tratado como un objeto
+cualquiera dentro del código.
